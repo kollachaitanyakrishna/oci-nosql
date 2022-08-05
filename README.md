@@ -12,7 +12,7 @@ NoSQL billing cost is calculated based on storage size, reads & writes allocatio
 |billing_raw	|1000	|1000	|10gb|	$132.46
 |billing_processed	|500	|500	|5gb	|$66.23
 
-This cost may vary, please check Cost Estimator - link for latest rates
+This cost may vary, please check Cost Estimator - [link](https://www.oracle.com/in/cloud/costestimator.html) for latest rates
 
 As per the use case this process will take ~10 mins to complete this requirement with daily cron job in OKE. 
 
