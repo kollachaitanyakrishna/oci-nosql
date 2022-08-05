@@ -1,0 +1,6 @@
+user = "ocid1.user.oc1....xxxxxxx"
+fingerprint = "xx:xx:xx:xx:xx"
+tenancy = "ocid1.tenancy.oc1..xxxx"
+region = "us-ashburn-1"
+key_content = "-----BEGIN PRIVATE KEY-----\r\n XXXXX xx xxx xx xx \r\n-----END PRIVATE KEY-----"
+subscription_id = ""

@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: billing-cron-job
+spec:
+  schedule: "30 15 * * *"
+  jobTemplate:
+    spec:
+      backoffLimit: 5
+      parallelism: 1
+      completions: 1
+      template:
+        spec:
+          containers:
+          - name: billing-cron-job
+            image: iad.ocir.io/idv7rwl7b6vx/oci-cron-dataprocessing:1.0
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster; python ./main.py; echo cluster exeucted;
+          restartPolicy: OnFailure
