@@ -30,11 +30,19 @@ After best practice
 
 Overall cost is reduced by 98%.
 
+Sample Execution
+
+# Read Units
+![Read Units Example](./sampleresult/ReadUnits.png)
+
+# Write Units
+
+![Write Units Example](./sampleresult/WriteUnits.png)
 # Flow
 
 start -> Increase read & writes -> Process Job -> Reduce Reads & writes -> Stop
 
-Step 1: Fill the values in config.py (link)[https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm]
+Step 1: Fill the values in config.py [link](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
 
 Step 2: Run the main.py
 

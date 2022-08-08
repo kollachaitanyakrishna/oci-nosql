@@ -16,7 +16,8 @@ logging.getLogger('oci').setLevel(logging.DEBUG)
 
 
 # Used for the ratecard calculations.
-# refresh_rate_card(config_demo_signer["tenancy"], isDelete = False)
+# isDelete = False, Pass True to delete the old data and insert the new data
+# Step1: Fill the details of config.py
 def refresh_rate_card(is_delete = False):
     oci_config = {
         "user": user,
@@ -27,10 +28,15 @@ def refresh_rate_card(is_delete = False):
     }
 
     print(oci_config)
+    # Step 2: Set the read write limits.
     set_ratecard_limits()
     if(is_delete == True):
         delete_ratecard(tenancy)
+    
+    # Step 3: Pull the rate card and insert the data to nosql table
     pull_ratecard(config=oci_config, subscription_id=subscription_id, tenant_id=tenancy)
+
+    # Step 4: Revert the rate card read and write limits.
     revert_ratecard_limits()
 
 refresh_rate_card()
