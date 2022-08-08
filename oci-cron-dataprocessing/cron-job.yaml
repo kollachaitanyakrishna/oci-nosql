@@ -1,3 +1,4 @@
+# A cron job created in kubernetes cluster to run at 3:30PM UTC
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -13,7 +14,7 @@ spec:
         spec:
           containers:
           - name: billing-cron-job
-            image: iad.ocir.io/idv7rwl7b6vx/oci-cron-dataprocessing:1.0
+            image: iad.ocir.io/xxxxxxxx/oci-cron-dataprocessing:1.0
             imagePullPolicy: IfNotPresent
             command:
             - /bin/sh
